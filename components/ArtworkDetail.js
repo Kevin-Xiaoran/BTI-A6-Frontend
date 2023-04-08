@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { addToFavourites, removeFromFavourites } from '@/lib/userData';
 import { useEffect } from 'react';
+import Error from 'next/error';
 
 export default function ArtworkCardDetail(props) {
     const { data, error } = useSWR(props.objectID ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${props.objectID}` : null);
